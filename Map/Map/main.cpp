@@ -1,4 +1,4 @@
-// map v0.3
+// map v0.4
 
 #include <iostream>
 #include <string>
@@ -60,6 +60,19 @@ int main(void)
 	//cout << Objects["Player"] = Info.Position.x << endl;
 	//cout << Objects["Player"] = Info.Position.y << endl;
 	//cout << Objects["Player"] = Info.Position.z << endl;
+
+	for (auto iter = Objects.begin(); iter != Objects.end(); ++iter)
+	{
+		cout << "Key Name : " << iter->first << endl;
+
+		for (auto iter2 = iter->second.begin();	iter2 != iter->second.end(); ++iter2)
+		{
+			cout << "Pos X : " << (*iter2)->Info.Position.x << endl;
+			cout << "Pos Y : " << (*iter2)->Info.Position.y << endl;
+			cout << "Pos Z : " << (*iter2)->Info.Position.z << endl << endl;
+		}
+	}
+
 
 	return 0;
 }
